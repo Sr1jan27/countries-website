@@ -1,19 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Country } from './country';
+import { CountryService } from './country.service';
 
 @Component({
-  selector: 'app-country-list',
+  selector:   
+ 'app-country-list',
   templateUrl: './country-list.component.html',
   styleUrls: ['./country-list.component.css']
 })
-export class CountryListComponent implements OnInit {
-  countries: any[] = [];
+export class CountryListComponent implements   
+ OnInit {
+  countries: Country[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private countryService:   
+ CountryService) { }
 
   ngOnInit(): void {
-    this.http.get<any[]>('assets/data.json').subscribe(data => {
-      this.countries = data;
+    this.countryService.getCountries().subscribe(data => {
+      this.countries = data;   
+
     });
   }
 }

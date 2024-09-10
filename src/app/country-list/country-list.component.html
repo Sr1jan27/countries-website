@@ -1,1 +1,16 @@
-<p>country-list works!</p>
+<div class="container">
+    <h2>Country List</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div *ngFor="let country of countries" class="col">
+        <div class="card">
+          <img [src]="country.flag" class="card-img-top" alt="{{ country.name }} Flag">
+          <div class="card-body">
+            <h5 class="card-title">{{ country.name }}</h5>
+            <p class="card-text">Capital: {{ country.capital }}</p>
+            <p class="card-text">Population: {{ country.population }}</p>
+            <p class="card-text">Region: {{ country.region }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
