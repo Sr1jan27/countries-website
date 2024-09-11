@@ -5,16 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CountryListComponent } from './country-list/country-list.component';
 import { CountryDetailsComponent } from './country-details/country-details.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountryListComponent,
     CountryDetailsComponent,
-    NavbarComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
