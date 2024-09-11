@@ -7,7 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'country-list', component: CountryListComponent },
-  { path: 'country/:alpha3Code', component: CountryDetailsComponent }
+  { path: 'country-details/:countryName', component: CountryDetailsComponent }
 ];
 
 @NgModule({
