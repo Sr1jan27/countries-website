@@ -1,5 +1,17 @@
 <div class="container">
-    <h2>Country List</h2>
+    <div class="container search-dropdown">
+        <form class="form-inline search">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="margin-right: 5px;">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="width: 300px;">Search for a country...</button>
+        </form>
+
+        <div>
+            <select id="region-select" (change)="onRegionChange()">
+              <option value="">Filter By Region:</option>
+              <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
+            </select>
+          </div>
+    </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div *ngFor="let country of countries" class="col">
         <div class="card">

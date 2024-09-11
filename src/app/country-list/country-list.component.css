@@ -1,0 +1,15 @@
+.search {
+    display: flex;
+}
+
+.search-dropdown {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.card-img-top {
+    height: 276px;
+    width: 414px;
+}
