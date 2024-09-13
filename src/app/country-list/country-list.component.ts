@@ -9,8 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./country-list.component.css']
 })
 export class CountryListComponent implements OnInit {
-  regions: string[] = ["Africa", "America", "Asia", "Europe", "Oceania"];
+  regions: string[] = ["Africa", "Americas", "Antarctic Ocean", "Asia", "Europe", "Oceania", "Polar"];
   countries: Country[] = [];
+  AllCountries: Country[] = [];
   selectedCountry: any = null;
 
   constructor(private countryService: CountryService, private router: Router) { }
@@ -18,12 +19,19 @@ export class CountryListComponent implements OnInit {
   ngOnInit(): void {
     this.countryService.getCountries().subscribe(data => {
       this.countries = data;   
+      this.AllCountries = data;
     });
   }
 
-  onRegionChange(): void {
+  onRegionChange(event: Event): void {
+
+  const selectedRegion = (event.target as HTMLSelectElement).value;
+
+  if(selectedRegion){
+    this.countries = this.AllCountries.filter(country => country.region === selectedRegion);
+  }else {
+    this.countries = this.AllCountries;
+  }
   console.log("clicked");
-  
-    // Add filter logic based on selected region
   }
 }

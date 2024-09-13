@@ -5,7 +5,7 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="width: 300px;">Search for a country...</button>
       </form>
       <div>
-        <select id="region-select" (change)="onRegionChange()">
+        <select id="region-select" (change)="onRegionChange($event)">
           <option value="">Filter By Region:</option>
           <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
         </select>
